@@ -8,14 +8,13 @@ function changeHeading(ev) {
 
     const p = document.createElement('p')
     p.textContent = `<p>${name}, age ${age}</p>`
-    
+    p.style.color = color
     div.appendChild(p)
 
     //div.innerHTML = name
     //***div.innerHTML = '<p>' + name + ', age ' + age + '</p>'    
-    //div.innerHTML = `<p>${name}, age ${age}</p>`
+    //div.innerHTML = `<p style="color: ${color}">${name}, age ${age}</p>`
     //gets own paragraph
-    div.style.color = textColor
 }
 
 const personForm = document.querySelector('#person-form')
