@@ -1,26 +1,24 @@
 function changeHeading(ev) {
     ev.preventDefault()
-    const f = ev.target
+    const f = event.target
     const name = f.personName.value 
     const age = f.personAge.value
     const color = f.textColor.value
-    const heading = document.querySelector('#stats p')
-    heading.textContent = name
-    heading.style.color = textColor
+    const div = document.querySelector('#stats')
+
+    const p = document.createElement('p')
+    p.textContent = `<p>${name}, age ${age}</p>`
+    
+    div.appendChild(p)
+
+    //div.innerHTML = name
+    //***div.innerHTML = '<p>' + name + ', age ' + age + '</p>'    
+    //div.innerHTML = `<p>${name}, age ${age}</p>`
+    //gets own paragraph
+    div.style.color = textColor
 }
 
 const personForm = document.querySelector('#person-form')
 personForm.addEventListener('submit', changeHeading)
 
-
-/*function nameToParagraph(ev) {
-    ev.preventDefault()
-    const f = ev.target
-    const name = f.personName.value
-    const para = document.querySelector('p')
-    para.textContent = name
-}
-
-const paraName = document.querySelector('#stats')
-paraName.addEventListener('submit', nameToParagraph)*/
 
