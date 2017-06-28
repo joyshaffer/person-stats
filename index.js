@@ -3,7 +3,7 @@ function handleSubmit(ev) {
   const f = ev.target
   const name = f.personName.value
   const age = f.personAge.value
-  const color = f.favoriteColor.value
+  const favoriteColor = f.favoriteColor.value
 
   const div = document.querySelector('#stats')
   
@@ -20,11 +20,7 @@ function handleSubmit(ev) {
   const colorItem = document.createElement('li')
   colorItem.textContent = 'Favorite Color: '
 
-  const colorDiv = document.createElement('div')
-  colorDiv.style.backgroundColor = color
-  colorDiv.style.width = '6rem'
-  colorDiv.style.height = '3rem'
-  colorItem.appendChild(colorDiv)
+  colorItem.appendChild(renderColor(favoriteColor))
 
   list.appendChild(colorItem)
 
@@ -36,3 +32,13 @@ function handleSubmit(ev) {
 
 const personForm = document.querySelector('#person-form')
 personForm.addEventListener('submit', handleSubmit)
+
+
+function renderColor(favoriteColor) {
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    return colorDiv
+}
+
